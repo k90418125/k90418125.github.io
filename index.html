@@ -43,6 +43,31 @@
   <body>
   <h1>正修科技大學</h1>
   <h2>資工科<h2>
+      <h3>照片集</h3>
+        <img src="pic00.jpg" alt="" onmousedown="this.src=nextImage()"
+                                    onmouseover="this.src=randomImage()">                                
+        <script>
+            var curIndex=0;
+            var imgArray= new Array();
+            var pics=13;
+            for(i=0;i<pics;i++)
+            {
+                imgArray[i]=new Image();
+                if(i<10)
+                 imgArray[i].src="pic0"+i+".jpg";
+                else
+                 imgArray[i].src="pic"+i+".jpg";
+            }
+            function nextImage(){
+                curIndex++;
+                curIndex=curIndex % pics;
+                return(imgArray[curIndex].src);
+            }
+            function randomImage(){
+                curIndex=Math.floor(Math.random()*pics);
+                return(imgArray[curIndex].src);
+            }
+        </script>
 <hr width="10000">
     <h3>劉祐銘</br>
       90418125<h3>
