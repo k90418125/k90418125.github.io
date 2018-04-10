@@ -1,77 +1,66 @@
+
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>劉祐銘</title>
-    <style media="screen">
-    body{
-      text-align: center;
-      background-color:yellow;
-      color:green;
-      background-image:ur1"aadd.jpg";
-    }
-    </style>
-  </head>
-  <body onload="startClock()" onunload="stopClock()">
-    <div id="show"></div>
-  <script>
-    var timer = null;
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>照片集</title>
+
+</head>
+<body onload="startClock()" onunload="stopClock()">   
+    <h2>照片集</h2>
+    <img src="pic00.jpg" alt="" onmousedown="this.src=nextImage()" 
+                                       onmouseover="this.src=randomImage()">
+    <div id="show"></div>           
+    <script>
+        var curIndex=0;
+        var imgArray = new Array();
+        var pics=9;
+        for(i=0;i<pics;i++)
+        {
+            imgArray[i]=new Image();
+            if(i<10)
+            imgArray[i].src="images/pic0"+i+".jpg";
+            else
+            imgArray[i].src="images/pic"+i+".jpg";
+        }
+        function nextImage(){
+            curIndex++;
+            curIndex=curIndex % pics;
+            return(imgArray[curIndex].src);
+        }
+        function randomImage(){
+            curIndex=Math.floor(Math.random()*pics);
+            return(imgArray[curIndex].src);
+        }
+        //時間
+        var timer = null;
     // 顯示數字圖片
-    function displayClock(num) {
-      var dig = parseInt(num/10);
-      var timetag="<img src='images\\" + dig + ".gif'>";
-      dig = num%10;
-      timetag +="<img src='images\\" + dig + ".gif'>";
-      return timetag;
-    }
-    // 停止計時
-    function stopClock() {
-       clearTimeout(timer);
-    }
-    // 開始計時
-    function startClock() {
-       var time = new Date();
-       // 取得時間
-       var hours = displayClock(time.getHours()) + ":";
-       var minutes = displayClock(time.getMinutes()) + ":";
-       var seconds = displayClock(time.getSeconds());
-       // 顯示時間
-       show.innerHTML = hours + minutes + seconds;
-       timer = setTimeout("startClock()",1000);
-    }
-    <h4>照片集<h4>
-        <img src="pic00.jpg" alt="" onmousedown="this.src=nextImage()"
-                                    onmouseover="this.src=randomImage()">                                
-        <script>
-            var curIndex=0;
-            var imgArray= new Array();
-            var pics=13;
-            for(i=0;i<pics;i++)
-            {
-                imgArray[i]=new Image();
-                if(i<10)
-                 imgArray[i].src="pic0"+i+".jpg";
-                else
-                 imgArray[i].src="pic"+i+".jpg";
-            }
-            function nextImage(){
-                curIndex++;
-                curIndex=curIndex % pics;
-                return(imgArray[curIndex].src);
-            }
-            function randomImage(){
-                curIndex=Math.floor(Math.random()*pics);
-                return(imgArray[curIndex].src);
-            }
-    </script>
-  <body>
-  <h1>正修科技大學</h1>
-  <h2>資工科<h2>
-<hr width="10000">
-    <h3>劉祐銘</br>
-      90418125<h3>
-        <img src="aadd.jpg" alt=""border="3" height="300" width=250>
-        <img src="aacc.jpg" alt=""border="3" height="300" width=250><br />
-    <h3>興趣:出外走走,多交交朋友<h3>
-   </body>
+function displayClock(num) {
+  var dig = parseInt(num/10);
+  var timetag="<img src='images\\" + dig + ".gif'>";
+  dig = num%10;
+  timetag +="<img src='images\\" + dig + ".gif'>";
+  return timetag;
+}
+// 停止計時
+function stopClock() {
+   clearTimeout(timer);
+}
+// 開始計時
+function startClock() {
+   var time = new Date();
+   // 取得時間
+   var hours = displayClock(time.getHours()) + ":";
+   var minutes = displayClock(time.getMinutes()) + ":";
+   var seconds = displayClock(time.getSeconds());
+   // 顯示時間
+   show.innerHTML = hours + minutes + seconds;
+   timer = setTimeout("startClock()",1000);
+}
+
+       </script>
+
+</body>
 </html>
