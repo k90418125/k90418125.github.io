@@ -5,25 +5,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>照片集</title>
-
+    <title>點圖片</title>
 </head>
 <body onload="startClock()" onunload="stopClock()">
+        <div id="show"></div>
     <h2>照片集</h2>
-    <img src="pic00.jpg" alt="" onmousedown="this.src=nextImage()"
-                                       onmouseover="this.src=randomImage()">
-    <div id="show"></div>
+
+    <img src="pic00.jpg" alt="" onmousedown="this.src=nextImage()" onmouseover="this.src=randomImage()">
     <script>
+        
         var curIndex=0;
-        var imgArray = new Array();
-        var pics=9;
-        for(i=0;i<pics;i++)
-        {
-            imgArray[i]=new Image();
-            if(i<10)
-            imgArray[i].src="images/pic00"+i+".jpg";
-            else
-            imgArray[i].src="images/pic12"+i+".jpg";
+        var imgArray=new Array();
+        var pics=7;
+
+        for (i=0;i<pics;i++){
+        imgArray[i]=new Image();
+        imgArray[i].src = "pic0" + i + ".jpg";
         }
         function nextImage(){
             curIndex++;
@@ -31,12 +28,13 @@
             return(imgArray[curIndex].src);
         }
         function randomImage(){
-            curIndex=Math.floor(Math.random()*pics);
-            return(imgArray[curIndex].src);
+            curIndex=Math.floor(Math.random()*imgArray.length);
+            return (imgArray[curIndex].src);
         }
-        //時間
+
+
         var timer = null;
-    // 顯示數字圖片
+// 顯示數字圖片
 function displayClock(num) {
   var dig = parseInt(num/10);
   var timetag="<img src='images\\" + dig + ".gif'>";
@@ -59,8 +57,7 @@ function startClock() {
    show.innerHTML = hours + minutes + seconds;
    timer = setTimeout("startClock()",1000);
 }
-
-       </script>
-
+    </script>
+    
 </body>
 </html>
