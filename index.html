@@ -1,69 +1,140 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body onload="startClock()" onunload="stopClock()">
-        <div id="show"></div>
-        <h2>照片集</h2>
-        <img src="images/pic00.jpeg" alt=""onmousedown="this.src=nextImage()"
-                                    onmouseover="this.src=randomImage()">
-        <h2>資工三甲 學號90418152 簡嘉成</h2>
-        <br><i>興趣 : 聽歌，玩Gmae， 彈吉他， 聽KISS Radio<i/><br/>
-        <i>喜歡食物:什麼都喜歡，不喜歡魚<i/><br/>
-       <script>
-            var curIndex=0;
-            var imgArray = new Array();
-            var pics=14;
-    
-            for(i=0;i<pics;i++)
-            {
-                imgArray[i]=new Image();
-                if(i<10)
-                    imgArray[i].src="images/pic0"+i+".jpeg";
-                else
-                    imgArray[i].src="images/pic"+i+".jpeg";
-
-            }
-            function nextImage()
-            {
-                curIndex++;
-                curIndex=curIndex % pics;
-                return(imgArray[curIndex].src);
-            }
-            function randomImage(){
-                curIndex=Math.floor(Math.random()*imgArray.length);
-                return(imgArray[curIndex].src);
-            }
-       </script>
-       <script>
-                var timer = null;
-                // 顯示數字圖片
-                function displayClock(num) {
-                  var dig = parseInt(num/10);
-                  var timetag="<img src='images\\" + dig + ".gif'>";
-                  dig = num%10;
-                  timetag +="<img src='images\\" + dig + ".gif'>";
-                  return timetag;
-                }
-                // 停止計時
-                function stopClock() {
-                   clearTimeout(timer);
-                }
-                // 開始計時
-                function startClock() {
-                   var time = new Date();
-                   // 取得時間
-                   var hours = displayClock(time.getHours()) + ":";
-                   var minutes = displayClock(time.getMinutes()) + ":";
-                   var seconds = displayClock(time.getSeconds());
-                   // 顯示時間
-                   show.innerHTML = hours + minutes + seconds;
-                   timer = setTimeout("startClock()",1000);
-                }
-                </script>
-</body>
-</html>
+<！DOCTYPE html>
+-  < html >
+-  < head >
+-  < meta  charset = “ utf-8 ” >
+-  < title >劉佑銘</ title >
+-  < style  media = “ screen ” >
+- 身體 {    
+- text-align：center ;      
+- 背景顏色：黃色 ;      
+- 顏色：綠色 ;      
+- background-image：ur1 “ aadd.jpg ” ;      
+-     }
+- < / style >    
+-  </ head >
+-  < body  onload = “ startClock（）”  onunload = “ stopClock（）” >
+-  < div  id = “ show ” > </ div >
+-  < script >
+- var timer = null ;     
++ < html  lang = “ en ” >
++ < head >
++ < meta  charset = “ UTF-8 ” >
++ < meta  name = “ viewport ”  content = “ width = device-width，initial-scale = 1.0 ” >
++ < meta  http-equiv = “ X-UA-Compatible ”  content = “ ie = edge ” >
++ < title >照片集</ title >
++
++ </ head >
++ < body  onload = “ startClock（）”  onunload = “ stopClock（）” >   
++ < h2 >照片集</ h2 >
++ < img  src = “ pic00.jpg ”  alt = “ ”  onmousedown = “ this.src = nextImage（）” 
++                                        onmouseover = “ this.src = randomImage（）” >
++ < div  id = “ show ” > </ div >           
++ < script >
++ var curIndex = 0 ;        
++ var imgArray = new Array（）;          
++ var pics = 9 ;        
++ for（i = 0 ; i < pics; i ++）        
++         {
++             imgArray [i] = new  Image（）;
++ if（i < 10）            
++             imgArray [i]。src = “ images / pic0 ” + i + “. jpg ” ;
++ 其他            
++             imgArray [i]。src = “ images / pic ” + i + “. jpg ” ;
++         }
++ 函數nextImage（）{         
++             curIndex ++ ;
++             curIndex = curIndex ％ pics;
++ return（imgArray [curIndex] .src）;            
++         }
++ 函數randomImage（）{         
++             curIndex = 數學。地板（數學。隨機（）* PICS）;
++ return（imgArray [curIndex] .src）;            
++         }
++ //時間        
++ var timer = null ;         
+     //顯示數字圖片
+- 函數displayClock（num）{     
+- var dig = parseInt（num / 10）;       
+- var timetag = “ <img src ='images \\ ” + dig + “. gif'> ” ;        
+-       dig = num ％10 ;
+-       timetag + = “ <img src ='images \\ ”  + dig +  “. gif'> ” ;
+- 返回時間標籤;      
+-     }
+- //停止計時    
+- function stopClock（）{     
+- clearTimeout（定時器）;       
+-     }
+- //開始計時    
+- 函數startClock（）{     
+- var time = new Date（）;         
+- //取得時間       
+- 無功小時= displayClock（時間。調用getHours（））+ “：” ;         
+- 變種分鐘= displayClock（時間。getMinutes（））+ “：” ;         
+- 變種秒= displayClock（時間。getSeconds（））;        
+- //顯示時間       
+- 表演。innerHTML =小時+分鐘+秒;        
+-        timer =  setTimeout（“ startClock（）”，1000）;
+-     }
+- < h4 >照片集< h4 >    
+- < img src = “ pic00.jpg ” alt = “ ” onmousedown = “ this.src = nextImage（）”        
+-                                     onmouseover = “ this.src = randomImage（）” >                                
+- < script >        
+- var curIndex = 0 ;            
+- var imgArray = new Array（）;              
+- var pics = 13 ;            
+- for（i = 0 ; i < pics; i ++）            
+-             {
+-                 imgArray [i] = new  Image（）;
+- 如果（i < 10）                
+-                  imgArray [i]。src = “ pic0 ” + i + “. jpg ” ;
+- 別的                
+-                  imgArray [i]。src = “ pic ” + i + “. jpg ” ;
+-             }
+- function nextImage（）{             
+-                 curIndex ++ ;
+-                 curIndex = curIndex ％ pics;
+- return（imgArray [curIndex] 。src）;                
+-             }
+- 函數randomImage（）{             
+-                 curIndex = 數學。地板（數學。隨機（）* PICS）;
+- return（imgArray [curIndex] 。src）;                
+-             }
+- < / script >    
+-  < body >
+-  < h1 >正修科技大學</ h1 >
+-  < h2 >資工科< h2 >
+-  < hr  width = “ 10000 ” >
+-  < h3 >劉佑銘</ br >
+-  90418125 < h3 >
+-  < img  src = “ aadd.jpg ”  alt = “ ” border = “ 3 ”  height = “ 300 ”  width = 250 >
+- < IMG  SRC = “ aacc.jpg ”  ALT = “ ”邊界 = “ 3 ” 高度 = “ 300 ” 寬度 = 250 > < BR />
+-  < h3 >興趣：出外走走，多交交朋友< h3 >
+-  </ body >
+-  </ html >
++ 函數 displayClock（num）{
++ var dig = parseInt（num / 10）;   
++ var timetag = “ <img src ='images \\ ” + dig + “. gif'> ” ;    
++   dig = num ％10 ;
++   timetag + = “ <img src ='images \\ ”  + dig +  “. gif'> ” ;
++ 返回時間標籤;  
++ }
++ //停止計時
++ function  stopClock（）{
++ clearTimeout（timer）;   
++ }
++ //開始計時
++ 函數 startClock（）{
++ var time = new Date（）;     
++ //取得時間   
++ VAR小時= displayClock（時間。調用getHours（））+ “：” ;     
++ VAR分鐘= displayClock（時間。getMinutes（））+ “：” ;     
++ VAR秒= displayClock（時間。getSeconds（））;    
++ //顯示時間   
++ show。innerHTML =小時+分鐘+秒;    
++    timer =  setTimeout（“ startClock（）”，1000）;
++ }
++
++ < / script >       
++
++ </ body >
++ </ html > 
