@@ -8,11 +8,11 @@
     <title>照片集</title>
 
 </head>
-<body onload="startClock()" onunload="stopClock()">   
+<body onload="startClock()" onunload="stopClock()">
     <h2>照片集</h2>
-    <img src="pic00.jpg" alt="" onmousedown="this.src=nextImage()" 
+    <img src="pic00.jpg" alt="" onmousedown="this.src=nextImage()"
                                        onmouseover="this.src=randomImage()">
-    <div id="show"></div>           
+    <div id="show"></div>
     <script>
         var curIndex=0;
         var imgArray = new Array();
@@ -21,9 +21,9 @@
         {
             imgArray[i]=new Image();
             if(i<10)
-            imgArray[i].src="images/pic0"+i+".jpg";
+            imgArray[i].src="images/pic00"+i+".jpg";
             else
-            imgArray[i].src="images/pic"+i+".jpg";
+            imgArray[i].src="images/pic12"+i+".jpg";
         }
         function nextImage(){
             curIndex++;
