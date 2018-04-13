@@ -11,19 +11,19 @@
 <body onload="startClock()" onunload="stopClock()">
     <h2>照片集</h2>
     <img src="pic00.jpg" alt="" onmousedown="this.src=nextImage()"
-                                       onmouseover="this.src=randomImage()">
+                               onmouseover="this.src=randomImage()">
     <div id="show"></div>
     <script>
         var curIndex=0;
         var imgArray = new Array();
-        var pics=9;
+        var pics=13;
         for(i=0;i<pics;i++)
         {
             imgArray[i]=new Image();
             if(i<10)
-            imgArray[i].src="images/pic00"+i+".jpg";
+            imgArray[i].src="pic0"+i+".jpg";
             else
-            imgArray[i].src="images/pic12"+i+".jpg";
+            imgArray[i].src="pic"+i+".jpg";
         }
         function nextImage(){
             curIndex++;
